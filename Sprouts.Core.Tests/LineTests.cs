@@ -1,15 +1,15 @@
 using Xunit;
 
-namespace Sprouts.Core.Tests
+namespace Sprouts.Core.Test
 {
-    public class LineTest
+    public class LineTests
     {
         [Fact]
-        public void Test1()
+        public void NewLineContainsRefrencesToCorrectDots()
         {
-            var leftDot = new Dot("left dot");
-            var rightDot = new Dot("rightt dot");
-            var midDot = new Dot("mid dot");
+            var leftDot = new Dot();
+            var rightDot = new Dot();
+            var midDot = new Dot();
             var line = new Line(leftDot, rightDot);
 
             var newLine = line.AddDot(midDot);
@@ -17,6 +17,18 @@ namespace Sprouts.Core.Tests
             Assert.NotNull(newLine);
             Assert.Equal(leftDot, newLine.LeftDot);
             Assert.Equal(midDot, newLine.RightDot);
+        }
+
+        [Fact]
+        public void OldLineContainsCorrectRefrencesToDots() {
+
+            var leftDot = new Dot();
+            var rightDot = new Dot();
+            var midDot = new Dot();
+            var line = new Line(leftDot, rightDot);
+
+            line.AddDot(midDot);
+
             Assert.Equal(midDot, line.LeftDot);
             Assert.Equal(rightDot, line.RightDot);
         }
@@ -24,9 +36,9 @@ namespace Sprouts.Core.Tests
         [Fact]
         public void LeftDotContainsCorrectLinesAfterDotAddition()
         {
-            var leftDot = new Dot("left dot");
-            var rightDot = new Dot("rightt dot");
-            var midDot = new Dot("mid dot");
+            var leftDot = new Dot();
+            var rightDot = new Dot();
+            var midDot = new Dot();
             var line = new Line(leftDot, rightDot);
 
             var newLine = line.AddDot(midDot);
@@ -38,9 +50,9 @@ namespace Sprouts.Core.Tests
         [Fact]
         public void MidDotContainsCorrectLinesAfterDotAddition()
         {
-            var leftDot = new Dot("left dot");
-            var rightDot = new Dot("rightt dot");
-            var midDot = new Dot("mid dot");
+            var leftDot = new Dot();
+            var rightDot = new Dot();
+            var midDot = new Dot();
             var line = new Line(leftDot, rightDot);
 
             var newLine = line.AddDot(midDot);
@@ -52,9 +64,9 @@ namespace Sprouts.Core.Tests
         [Fact]
         public void RightDotContainsCorrectLinesAfterDotAddition()
         {
-            var leftDot = new Dot("left dot");
-            var rightDot = new Dot("rightt dot");
-            var midDot = new Dot("mid dot");
+            var leftDot = new Dot();
+            var rightDot = new Dot();
+            var midDot = new Dot();
             var line = new Line(leftDot, rightDot);
 
             var newLine = line.AddDot(midDot);
