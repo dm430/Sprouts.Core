@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Sprouts.Core
 {
@@ -9,6 +10,7 @@ namespace Sprouts.Core
         private const int MaxNumberOfLines = 3;
         private const int MaxNumberOfSelfReferencedLines = 2;
 
+        protected readonly Vector2 point;
         protected readonly IList<Line> lines;
 
         public Dot()
